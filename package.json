@@ -1,0 +1,32 @@
+{
+  "name": "portici-project-bot",
+  "version": "1.0.0",
+  "description": "Discord bot modulare per Portici Project con anti-nuke, anti-raid, moderazione, ticket e notifiche boost.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy-commands": "node src/deploy-commands.js",
+    "check": "node --check src/index.js && node --check src/deploy-commands.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "render",
+    "security",
+    "moderation",
+    "sqlite"
+  ],
+  "author": "Portici Project",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  }
+}

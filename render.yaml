@@ -1,0 +1,37 @@
+name: portici-project-bot
+services:
+  - type: worker
+    name: portici-project-bot
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: npm install && npm run deploy-commands
+    startCommand: npm start
+    autoDeploy: true
+    disk:
+      name: portici-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: LOG_CHANNEL_ID
+        sync: false
+      - key: TICKET_CATEGORY_ID
+        sync: false
+      - key: BOOST_CHANNEL_ID
+        sync: false
+      - key: BOOST_ROLE_ID
+        sync: false
+      - key: MODERATION_ROLE_ID
+        sync: false
+      - key: ADMIN_ROLE_ID
+        sync: false
+      - key: DATABASE_PATH
+        value: /data/portici-bot.db
